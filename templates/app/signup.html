@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+</head>
+<body>
+    <h1>Welcome to signup page.</h1>
+  
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        Username {{ form.username }}
+        <br>
+        <br>
+        Email {{ form.email }} 
+        <br>
+        <br>
+        Password {{ form.password }}
+        <br>
+        <br>
+        Role {{ form.role }}
+        <br>
+        <br>
+        Profile Picture {{ form.profile_picture }}
+        <br>
+        <br>
+        <button type="submit">Register</button>
+    </form>
+    
+</body>
+</html>
