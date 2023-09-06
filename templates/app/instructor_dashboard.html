@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructor Dashboard</title>
+</head>
+<body>
+  
+    <h1>Welcome Instructor {{user}} </h1>
+<ul>
+    {% for course in all_course %}
+
+    <h1>{{ course.title }}</h1>
+    <li>Description: {{ course.description }}</li>
+    <li>Instructor: {{ course.instructor }}</li>
+    <li>Category: {{ course.category }}</li>
+    <br>
+    <a href="{% url 'update_course' course.id %}">Update</a>
+    <a href="{% url 'delete_course' course.id %}">Delete</a>
+    
+    
+    <hr>
+
+    {% endfor %}
+
+</ul>
+
+    
+    <a href="{% url 'course' %}">Add Course</a>
+
+
+
+
+
+
+    <!-- <a href="{% url 'course' %}">Courses</a> -->
+</body>
+</html>

@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,47 +10,15 @@
     <h1>LoginPage</h1>
 
     <form method="post">
-
         {% csrf_token %}
-
-    username {{ form.username }}
-    <br>
-    <br>
-    password {{ form.password }}
-    <br>
-    <br>
-
-    <button type="submit">Login</button>
-
-</form>
+        {{ form.username.label_tag }} {{ form.username }}
+        <br><br>
+        {{ form.password.label_tag }} {{ form.password }}
+        <br><br>
+        <button type="submit">Login</button>
+    </form>
+    
     
 </body>
-</html> -->
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signup</title>
-</head>
-<body>
-    <h1>Signin</h1>
-
-    <form method="post">
-        {% csrf_token %}
-        <label for="">Username</label>
-        <input type="text" id="username" name="username" placeholder="Username" required>
-   
-        <hr>
-        <label for="">Password</label>
-        <input type="password" id="password" name="password" placeholder="Password" required>
-  
-        <hr>
-       
-        <button type="submit">Submit</button>
-   
-   
-    </form>
-</body>
 </html>
+

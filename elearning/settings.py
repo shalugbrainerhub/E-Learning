@@ -40,6 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
 ]
 
 MIDDLEWARE = [
@@ -127,3 +131,38 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 AUTH_USER_MODEL = 'app.CustomUser'
+
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+    'app.backends.CustomBackend',
+]
+
+
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+EMAIL_HOST_USER = 'shalug.brainerhub@gmail.com'  
+EMAIL_HOST_PASSWORD = 'yolbcgzejyvkodjv' 
+
+
+
+
+LOGIN_REDIRECT_URL = 'login'
+
+# Email settings
+# settings.py
+EMAIL_VERIFICATION = 'mandatory'
+
+ACCOUNT_UNIQUE_EMAIL = True  # Ensure email addresses are unique
+ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 3  # Expiration time for email confirmation links
+ACCOUNT_EMAIL_SUBJECT_PREFIX = ''  # Subject prefix for emails sent by allauth
+
+
+
+SITE_URL = 'http://127.0.0.1:8000'
