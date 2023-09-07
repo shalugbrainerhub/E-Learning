@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lectures</title>
+</head>
+<body>
+
+    <h1>Your course lectures are here. </h1>
+
+        <a href="{% url 'add_lectures' exist_course.id %}">Add Lectures</a>
+        <br>
+        <hr>
+
+    {% for lecture in all_lectures %}
+
+    Title: {{ lecture.title }}
+    <br>
+    <br>
+    Video: <a href="{{ lecture.video }}">{{ lecture.video }}</a>
+    
+    <br>
+    <br>
+    Course: {{ lecture.course }}
+    <br>
+    <br>
+
+   <button> <a href="{% url 'update_lecture' lecture.id %}">Update</a></button>
+    <button><a href="{% url 'delete_lecture' lecture.id %}">Delete</a></button>
+
+    <hr>
+
+    {% endfor %}
+    
+</body>
+</html>

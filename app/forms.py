@@ -31,5 +31,10 @@ class CourseForm(forms.ModelForm):
 #     password = forms.CharField(widget=forms.PasswordInput)
 
     
+class LectureForm(forms.ModelForm):
+    class Meta:
+        model=Lecture
+        fields='__all__'
 
+        
 
